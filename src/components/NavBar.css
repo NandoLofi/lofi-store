@@ -1,0 +1,16 @@
+.nav__bar{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    z-index: 50;
+    height: 110px;
+    text-decoration: none;
+    color: gainsboro;
+}
+.nav__bar > h2:hover {
+    background-color: lightcoral;
+
+}
