@@ -1,4 +1,4 @@
-.nav__bar{
+.navbar {
     width: 100%;
     background-color: black;
     display: flex;
@@ -7,10 +7,75 @@
     padding: 1.5rem 1rem;
     z-index: 50;
     height: 110px;
+}
+.navbar__logo  {
+    color: gainsboro;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.navbar__logo > a {
     text-decoration: none;
     color: gainsboro;
 }
-.nav__bar > h2:hover {
+.navbar__logo:hover {
     background-color: lightcoral;
+    border-radius: 7px;
+}
+.navbar__links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.navbar__links > li {
+    padding-left: 1.5rem;
+}
+.navbar__links > li > a {
+    text-decoration: none;
+    color: gainsboro;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+.navbar__links > li > a > span {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+.home__link {
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+.cart__link {
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+.cart__link:hover {
+    background: lightcoral;
+    color: gainsboro;
+}
+.cartlogo__badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 8px;
+    color:gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+}
 
+@media (max-width: 960px) {
+    .navbar__links {
+        display: none;
+    }
+}
+@media (max-width: 500px){
+    .navbar__logo > h2 {
+        font-size: 1rem;
+    }
 }

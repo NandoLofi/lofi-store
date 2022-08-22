@@ -5,18 +5,26 @@ import "./NavBar.css"
 
 export default function NavBar() {
   return (
-    <div className='nav__bar'>
-      <Link to ="/">
-      <h2>Lofi Shopping</h2>
-      </Link>
-      <Link to="/cart" >
-        <div className="nav__bag">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span className="cart__quantity">
-          <span>3</span>
-        </span>
-        </div>
-      </Link>
+    <nav className='navbar'>
+    <div className='navbar__logo'>
+        <Link to="/" className='home__link'>
+        <h2>Lofi Shopping</h2>
+        </Link>
     </div>
+
+    <ul className='navbar__links'>
+        <li>
+            <Link to="/cart" className='cart__link'>
+              <i className='fas fa-shopping-cart'> </i>
+              <span>
+              Cart
+              <span className='cartlogo__badge'>0</span>
+              </span>
+            </Link>
+        </li>
+    </ul>
+    
+
+</nav>
   )
 }
