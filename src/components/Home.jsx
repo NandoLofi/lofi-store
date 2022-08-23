@@ -1,9 +1,15 @@
 import React from 'react'
 import "./Home.css"
 import { productsAPI, useGetAllProductsQuery } from '../features/productsApi'
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../features/cartSlice';
 
 export default function Home() {
-  const { data, error, isLoading } = useGetAllProductsQuery()
+  const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
+  const handleAddToCart = (product) =>{
+    dispatch(addToCart(product));
+  }
 
   return (
     <div className="home__container">
@@ -24,7 +30,7 @@ export default function Home() {
                   <br></br>
                   <span className="price">${product.price}</span>
                 </div>
-                <button> Add to Cart </button>
+                <button onClick={()=> handleAddToCart(product)}> Add to Cart </button>
               </div>
             ))}
           </div>
