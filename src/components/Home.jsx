@@ -34,7 +34,7 @@ export default function Home() {
                   <br></br>
                   <span className="price">${product.price}</span>
                 </div>
-                <button onClick={()=> handleAddToCart(product)}> Add to Cart </button>
+                <button className='homeBtn' onClick={()=> handleAddToCart(product)}> Add to Cart </button>
               </div>
             ))}
           </div>
