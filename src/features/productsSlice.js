@@ -4,13 +4,18 @@ import axios from 'axios'
 
 const initialState = {
     items: [],
-    status: null
+    status: null,
+    error: null
 }
 export const productsFetch = createAsyncThunk(
     "products/productsFetch",
-    async ()=> {
-        const response = await axios.get("https://lofi-store.herokuapp.com/products")
-        .then((response) => response.data)
+    async ( id = null, { rejectWithValue } )=> {
+        try {
+        const response = await axios.get("https://lofi-store.herokuapp.com/products");
+        return response.data
+        } catch(error) {
+            return rejectWithValue(error.response.data)
+        }
     }
 )
 
@@ -26,8 +31,9 @@ const productSlice = createSlice({
             state.status = "success"
             state.items = action.payload
         },
-        [productsFetch.e]: (state, action) =>{
-            state.status = "pending"
+        [productsFetch.rejected]: (state, action) =>{
+            state.status = "rejected"
+            state.error = action.payload
         }
     }
         

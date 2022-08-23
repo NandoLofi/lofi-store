@@ -5,13 +5,20 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import productsReducer from './features/productsSlice';
+import productsReducer, { productsFetch } from './features/productsSlice';
+import { productsAPI } from './features/productsApi';
 
 const store = configureStore({
   reducer: {
-    products: productsReducer
-  }
+    products: productsReducer,
+    [productsAPI.reducerPath]: productsAPI.reducer,
+  },
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(productsAPI.middleware)
+  } 
 });
+
+store.dispatch(productsFetch())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
