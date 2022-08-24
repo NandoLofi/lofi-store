@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import "./Cart.css"
 
 
 export default function Cart() {
@@ -33,7 +34,6 @@ export default function Cart() {
                   <img src={cartItem.imageUrl} alt={cartItem.name} />
                   <div>
                     <h3>{cartItem.name}</h3>
-                    <p>{cartItem.description}</p>
                     <button>Remove</button>
                   </div>
                 </div>

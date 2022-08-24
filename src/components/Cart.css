@@ -1,0 +1,25 @@
+.cart__container {
+    padding: 2rem 2rem 4rem 4rem;
+}
+.cart__container > h2 {
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+}
+.titles {
+    margin: 2rem 0 1rem 0;
+}
+.titles > h3 {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.cart__item, .titles {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    column-gap: .5rem;
+}
+img {
+    width: 150px;
+}
