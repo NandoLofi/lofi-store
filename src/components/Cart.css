@@ -14,8 +14,7 @@
     font-weight: 400;
     text-transform: uppercase;
 }
-.cart__item,
-.cart__container, .titles {
+.titles, .cart__item {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr;
     align-items: center;

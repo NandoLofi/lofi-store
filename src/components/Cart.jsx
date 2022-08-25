@@ -43,8 +43,8 @@ export default function Cart() {
                   <button>+</button>
                 </div>
                 <div className="cart__product__total__price">
-                </div>
                   ${cartItem.price * cartItem.cartQuantity}
+                </div>
               </div>
             ))}
           </div>
