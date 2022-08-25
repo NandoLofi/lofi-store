@@ -21,5 +21,30 @@
     column-gap: .5rem;
 }
 img {
-    width: 150px;
+    width: 175px;
+    max-width: 100%;
+    padding-right: 1.2rem;
+}
+.cart__item {
+    border-top: 1px solid black;
+    padding: 1rem 0
+}
+.product__title {
+    padding-left: .5rem;
+}
+.total {
+    padding-right: .5rem;
+    justify-self: right;
+}
+.cart__product {
+    display: flex;
+}
+.cart__product > h3 {
+    font-weight: 400;
+}
+.remove {
+    border: solid black;
+    outline: none;
+    margin-top: .7rem;
+    cursor: pointer;
 }

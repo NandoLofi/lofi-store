@@ -33,10 +33,10 @@ export default function Cart() {
                   <img src={cartItem.imageUrl} alt={cartItem.name} />
                   <div>
                     <h3>{cartItem.name}</h3>
-                    <button>Remove</button>
+                    <button className='remove'>Remove</button>
                   </div>
                 </div>
-                <div className="cart__product__price">{cartItem.price}</div>
+                <div className="cart__product__price">${cartItem.price}</div>
                 <div className="cart__product__quantity">
                   <button>-</button>
                   <div className="count">{cartItem.cartQuantity}</div>
