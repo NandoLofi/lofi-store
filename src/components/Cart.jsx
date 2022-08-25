@@ -55,7 +55,7 @@ export default function Cart() {
                 <span>Subtotal</span>
                 <span className="amount">${cart.cart}</span>
               </div>
-              <button>Checkout</button>
+              <button className='checkout'>Checkout</button>
               <div className="continue__shopping">
                 <Link to="/">
                   <i class="fa-solid fa-shop"></i>
