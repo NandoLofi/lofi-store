@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import "./Cart.css"
 
 export default function Cart() {
   const cart = useSelector(state => state.cart)
@@ -28,9 +28,9 @@ export default function Cart() {
           </div>
           <div className="cart__items">
             {cart.cartItems.map((cartItem) => (
-              <div className="cart_item" key={cartItem.id}>
-                <img src={cartItem.imageUrl} alt={cartItem.name} />
+              <div className="cart__item" key={cartItem.id}>
                 <div className="cart__product">
+                  <img src={cartItem.imageUrl} alt={cartItem.name} />
                   <div>
                     <h3>{cartItem.name}</h3>
                     <button>Remove</button>
@@ -43,8 +43,8 @@ export default function Cart() {
                   <button>+</button>
                 </div>
                 <div className="cart__product__total__price">
-                  ${cartItem.price * cartItem.cartQuantity}
                 </div>
+                  ${cartItem.price * cartItem.cartQuantity}
               </div>
             ))}
           </div>
