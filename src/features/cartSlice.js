@@ -27,6 +27,15 @@ const cartSlice = createSlice({
                 cartItem => cartItem._id !== action.payload._id
             )
             state.cartItems = nextCartItems
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+        },
+        decreaseQty(state, action){
+            const itemIndex = state.cartItems.findIndex(
+                cartItem => cartItem._id === action.payload._id
+            )
+            if (state.cartItems[itemIndex].cartQuantity > 1){
+                state.cartItems[itemIndex].cartQuantity -= 1
+            }
         }
     }
 })
