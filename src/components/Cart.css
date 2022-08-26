@@ -103,3 +103,16 @@ img {
     font-size: 19px;
     font-weight: bold;
 }
+.cart__empty a {
+    text-decoration: none;
+    font-size: 19px;
+}
+.start__shopping, .start__shopping span {
+    padding-top: 10px;
+    color: black;
+    text-decoration: underline;
+}
+.start__shopping i {
+    color: black;
+    padding-right: 5px;
+}
