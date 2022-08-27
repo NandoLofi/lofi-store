@@ -1,13 +1,18 @@
-import React from 'react'
+import { React, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import "./Cart.css"
 import { useDispatch } from 'react-redux'
-import { addToCart, decreaseQty, removeFromCart } from '../features/cartSlice'
+import { addToCart, clearCart, decreaseQty, removeFromCart, totalPrice } from '../features/cartSlice'
 
 export default function Cart() {
   const cart = useSelector(state => state.cart)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(totalPrice())
+  }, [cart])
+
   const handleRemove = (cartItem) =>{
     dispatch(removeFromCart(cartItem))
   }
@@ -16,6 +21,9 @@ export default function Cart() {
   }
   const handleIncrease = (cartItem)=> {
     dispatch(addToCart(cartItem))
+  }
+  const handleClearCart = ()=> {
+    dispatch(clearCart())
   }
   return (
     <div className="cart__container">
@@ -61,11 +69,11 @@ export default function Cart() {
             ))}
           </div>
           <div className="cart__summary">
-            <button className="clear__cart">Clear Cart</button>
+            <button className="clear__cart" onClick={()=> handleClearCart()}>Clear Cart</button>
             <div className="cart__checkout">
               <div className="subtotal">
                 <span>Subtotal</span>
-                <span className="amount">${cart.cart}</span>
+                <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <button className='checkout'>Checkout</button>
               <div className="continue__shopping">
