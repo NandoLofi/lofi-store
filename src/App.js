@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, Redirect } from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Cart from './components/Cart'
 import Home from './components/Home'

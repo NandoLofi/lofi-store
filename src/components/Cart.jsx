@@ -11,7 +11,7 @@ export default function Cart() {
 
   useEffect(() => {
     dispatch(totalPrice())
-  }, [cart])
+  })
 
   const handleRemove = (cartItem) =>{
     dispatch(removeFromCart(cartItem))
