@@ -70,7 +70,7 @@
 
 @media (max-width: 960px) {
     .navbar__links {
-        display: none;
+        display: flex;
     }
 }
 @media (max-width: 500px){

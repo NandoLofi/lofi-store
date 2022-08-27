@@ -17,3 +17,5 @@ function App() {
 }
 
 export default App;
+
+//need to add media to mobile friendly and add width to cart items
