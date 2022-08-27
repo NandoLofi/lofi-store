@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Home.css"
-import { productsAPI, useGetAllProductsQuery } from '../features/productsApi'
+import { useGetAllProductsQuery } from '../features/productsApi'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cartSlice';
 import { useNavigate } from 'react-router';
@@ -12,7 +12,8 @@ export default function Home() {
   const navigate = useNavigate()
   const handleAddToCart = (product) =>{
     dispatch(addToCart(product));
-    navigate("/cart")
+    navigate("/")
+    alert("Added To Cart")
   }
 
   return (
@@ -34,7 +35,7 @@ export default function Home() {
                   <br></br>
                   <span className="price">${product.price}</span>
                 </div>
-                <button className='homeBtn' onClick={()=> handleAddToCart(product)}> Add to Cart </button>
+                <button className='homeBtn' onClick={()=> { handleAddToCart(product) }}> Add to Cart </button>
               </div>
             ))}
           </div>

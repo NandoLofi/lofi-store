@@ -18,7 +18,7 @@ export default function NavBar() {
               <i className='fas fa-shopping-cart'> </i>
               <span>
               Cart
-              <span className='cartlogo__badge'>0</span>
+              <span className='cartlogo__badge'></span>
               </span>
             </Link>
         </li>
